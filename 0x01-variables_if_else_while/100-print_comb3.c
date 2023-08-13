@@ -13,8 +13,11 @@ int main(void)
 	{
 		for (num1 = 0; num1 <= 9; num1++)
 		{
-			putchar(num + '0');
-			putchar(num1 + '0');
+			if (num != num1)
+			{
+				putchar(num + '0');
+				putchar(num1 + '0');
+			}
 
 			if (num < 8 || num1 < 9)
 			{
