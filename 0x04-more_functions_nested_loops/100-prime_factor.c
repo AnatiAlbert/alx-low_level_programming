@@ -6,9 +6,9 @@
  */
 int main(void)
 {
-	long number = 612852475143;
-	int prime;
-	long largest = 0;
+	unsigned long int number = 612852475143;
+	unsigned long int prime;
+	unsigned long int largest = 0;
 
 	for  (prime = 2; prime > 1; prime++)
 	{
@@ -20,7 +20,6 @@ int main(void)
 				largest = prime;
 		}
 	}
-	printf("The largest is %ld", largest);
-	printf("\n");
+	printf("%lu\n", largest);
 	return (0);
 }
