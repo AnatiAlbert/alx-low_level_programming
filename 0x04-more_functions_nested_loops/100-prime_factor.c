@@ -15,11 +15,10 @@ int main(void)
 		while (number % prime == 0)
 		{
 			number = number / prime;
+
+			if (largest < prime)
+				largest = prime;
 		}
-		if (largest < prime)
-		{
-			largest = prime;
-		}	
 	}
 	printf("The largest is %ld\n", largest);
 	return (0);
