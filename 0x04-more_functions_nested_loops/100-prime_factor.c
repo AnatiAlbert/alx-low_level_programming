@@ -20,6 +20,7 @@ int main(void)
 				largest = prime;
 		}
 	}
-	printf("The largest is %ld\n", largest);
+	printf("The largest is %ld", largest);
+	printf("\n");
 	return (0);
 }
