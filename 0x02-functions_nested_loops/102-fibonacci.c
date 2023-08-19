@@ -26,7 +26,7 @@ int main(void)
 			n2 = n3 - n2;
 			printf(", %d", n3);
 		}
-		n1++
+		n1++;
 	}
 	printf("\n");
 	return (0);
