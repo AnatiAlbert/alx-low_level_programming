@@ -18,8 +18,8 @@ int main(void)
 		{
 			result = result + n3;
 			n2 = n3 - n2;
+			++n1;
 		}
-		++n1;
 	}
 	printf("%ld\n", result);
 	return (0);
