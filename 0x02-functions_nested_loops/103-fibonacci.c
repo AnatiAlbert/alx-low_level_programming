@@ -8,7 +8,7 @@ int main(void)
 {
 	int n1 = 0;
 	long n2 = 1;
-	long n3 = 3;
+	long n3 = 2;
 	long result = n3;
 
 	while (n3 + n2 < 4000000)
