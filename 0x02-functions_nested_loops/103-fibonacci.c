@@ -14,12 +14,13 @@ int main(void)
 	while (n3 + n2 < 4000000)
 	{
 		n3 = n3 + n2;
+
 		if (n3 % 2 == 0)
 		{
 			result = result + n3;
-			n2 = n3 - n2;
-			++n1;
 		}
+		n2 = n3 - n2;
+		++n1;
 	}
 	printf("%ld\n", result);
 	return (0);
