@@ -13,5 +13,4 @@ void rev_string(char *s)
 	{
 		putchar(s[c1]);
 	}
-	putchar('\n');
 }
