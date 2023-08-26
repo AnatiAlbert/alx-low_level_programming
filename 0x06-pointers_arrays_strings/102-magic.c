@@ -1,5 +1,9 @@
 #include <stdio.h>
 
+/**
+ * main - checking pointers and array
+ * Return: always 0
+ */
 int main(void)
 {
 	int n;
