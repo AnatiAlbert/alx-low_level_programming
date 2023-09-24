@@ -1,12 +1,11 @@
-section .text
-	global main
-	extern printf
+global		main
+		extern		printf
 
 main:
-	mov edi, greet
-	xor eax, eax	
-	call printf
-	mov eax, 0
-	ret
+		mov   edi, greet
+		xor   eax, eax	
+		call  printf
+		mov   eax, 0
+		ret
+greet: db `Hello, Holberton\n`,0
 
-greet: db "Hello, Holberton\n",0
