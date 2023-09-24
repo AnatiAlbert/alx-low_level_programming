@@ -9,4 +9,4 @@ main:
 	mov eax, 0
 	ret
 
-greet: db 'Hello, Holberton', 0xa
+greet: db "Hello, Holberton\n",0
