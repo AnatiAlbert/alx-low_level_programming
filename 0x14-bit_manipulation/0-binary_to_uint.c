@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * binary_to_unit - converts binary numbery to unsigned integer
+ * binary_to_uint - converts binary numbery to unsigned integer
  * @b: points to string of 0s and 1s characters
  * Return: converted number
  */
@@ -9,7 +9,7 @@ unsigned int binary_to_uint(const char *b)
 {
 	unsigned int int_anati = 0;
 	int i;
-	
+
 	if (b == NULL)
 		return (0);
 	else if (!b)
