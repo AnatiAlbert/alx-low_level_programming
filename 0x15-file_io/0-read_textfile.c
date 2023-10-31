@@ -19,7 +19,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (fldr == -1)
 		return (0);
 
-	baf = mallloc(sizeof(char) * letters);
+	baf = malloc(sizeof(char) * letters);
 	if (baf == NULL)
 	{
 		close(fldr);
