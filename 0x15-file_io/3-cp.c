@@ -1,7 +1,5 @@
 #include "main.h"
 
-void confirm_stat_IO(int stt, int fdr, char *filename, char mod);
-
 /**
  * confirm_stat_IO - checks if a file can be opened or closed
  * @stt: file descriptor of file to be opened
@@ -15,17 +13,17 @@ void confirm_stat_IO(int stt, int fdr, char *filename, char mod)
 {
 	if (mod == 'C' && stt == -1)
 	{
-		dprint(STDERR_FILENO, "Can't close fdr %d\n", fdr);
+		dprint(STDERR_FILENO, "Error: Can't close fdr %d\n", fdr);
 		exit(100);
 	}
 	else if (mod == 'O' && stt == -1)
 	{
-		dprint(STDERR_FILENO, "Can't read from file %s\n", filename);
+		dprint(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
 		exit(98);
 	}
 	else if (mod == 'W' && stt == -1)
 	{
-		dprint(STDERR_FILENO, "Can't write to %s\n", filename);
+		dprint(STDERR_FILENO, "Error: Can't write to %s\n", filename);
 		exit(99);
 	}
 }
