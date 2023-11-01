@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 	sc = open(argv[1], O_RDONLY);
-	confirm_stat_IO(sc, -1, argv[1], '0');
+	confirm_stat_IO(sc, -1, argv[1], 'O');
 	dst = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, mod);
 	confirm_stat_IO(dst, -1, argv[2], 'W');
 	while (nrd == 1024)
