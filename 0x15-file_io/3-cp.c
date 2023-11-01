@@ -1,32 +1,6 @@
 #include "main.h"
 
-/**
- * confirm_stat_IO - checks if a file can be opened or closed
- * @stt: file descriptor of file to be opened
- * @filename: name of file
- * @mod: closing or opening
- * @fdr: file descriptor
- * Return: nothing
- */
-
-void confirm_stat_IO(int stt, int fdr, char *filename, char mod)
-{
-	if (mod == 'C' && stt == -1)
-	{
-		dprint(STDERR_FILENO, "Error: Can't close fdr %d\n", fdr);
-		exit(100);
-	}
-	else if (mod == 'O' && stt == -1)
-	{
-		dprint(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
-		exit(98);
-	}
-	else if (mod == 'W' && stt == -1)
-	{
-		dprint(STDERR_FILENO, "Error: Can't write to %s\n", filename);
-		exit(99);
-	}
-}
+void confirm_stat_IO(int stt, int fdr, char *filename, char mod);
 
 /**
  * main - function copies the content of one file to another
@@ -43,7 +17,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		dprint(STDERR_FILENO, "%s", "Usage: cp file_from_to\n");
+		dprintf(STDERR_FILENO, "%s", "Usage: cp file_from_to\n");
 		exit(97);
 	}
 	sc = open(argv[1], O_RDONLY);
@@ -64,4 +38,31 @@ int main(int argc, char *argv[])
 	cls_dst = close(dst);
 	confirm_stat_IO(cls_dst, dst, NULL, 'C');
 	return (0);
+}
+
+/**
+ * confirm_stat_IO - checks if a file can be opened or closed
+ * @stt: file descriptor of file to be opened
+ * @filename: name of file
+ * @mod: closing or opening
+ * @fdr: file descriptor
+ * Return: nothing
+ */
+void confirm_stat_IO(int stt, int fdr, char *filename, char mod)
+{
+	if (mod == 'C' && stt == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fdr);
+		exit(100);
+	}
+	else if (mod == 'O' && stt == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
+		exit(98);
+	}
+	else if (mod == 'W' && stt == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", filename);
+		exit(99);
+	}
 }
